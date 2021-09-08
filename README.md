@@ -37,3 +37,29 @@ console.log(dayOfWeek); // ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
 이게 박스로 생각하면 const daysOfWeek = ["mon", "tue", "wed", "thu", "fri", "sat"]; 이렇게 선언을 하면 이후에 daysOfWeek = ["hi"]; 이렇게 수정하는건 불가능합니다. 
 왜냐하면 박스 그 통째로 바꾸려고 하기 때문입니다.
 하지만 그 박스 안의 내용물들을 추가하거나 삭제할 수는 있습니다.
+
+### Objects
+object는 property를 가진 데이터를 저장해주며, { } 를 사용한다.
+property를 불러오는 방법은 2가지가 있다.
+1. console.log(player.name); => "mango"
+2. console.log(player["name"]); => "mango"
+```javascript
+const player = {
+  name: "mango",
+  color: "orange",
+  food: true,
+};
+
+console.log(player);
+// property를 변경하거나 추가하는 방법
+// 변경
+player.color = "yellow";
+console.log(player.color);
+// 추가
+player.price = 5000;
+console.log(player.price);
+```
+
+***중요!!**
+설명이 필요하지 않은 데이터 리스트들은 array로,
+설명이 필요한 정보가 담긴 데이터 리스트들은 object로!

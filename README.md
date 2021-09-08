@@ -60,6 +60,6 @@ player.price = 5000;
 console.log(player.price);
 ```
 
-***중요!!**
+**중요!!**
 설명이 필요하지 않은 데이터 리스트들은 array로,
 설명이 필요한 정보가 담긴 데이터 리스트들은 object로!

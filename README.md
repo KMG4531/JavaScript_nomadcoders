@@ -63,3 +63,40 @@ console.log(player.price);
 **중요!!**
 설명이 필요하지 않은 데이터 리스트들은 array로,
 설명이 필요한 정보가 담긴 데이터 리스트들은 object로!
+
+### 함수(function)
+console.log() 와 같은 기능
+function 명을 설정하고 그 안에 코드를 여러게 넣고 function 이름 설정한 것을 호출하면 안에 있던 코드가 다 실행됨
+```javascript
+// 이름
+function sayHello(name, age) {
+  console.log("Hello my name is" + name + " and I'm " + age);
+}
+sayHello("mingu", 21);
+
+// 더하기와 나누기
+function plus(a, b) {
+  console.log(a + b);
+}
+plus(5, 3);
+
+function divide(a, b) {
+  console.log(a / b);
+}
+divide(10, 2);
+```
+
+**Object 안에서 function 실행 방법**
+예시
+```javascript
+const player = {
+  name: "mingu",
+  // 밑에 부분
+  hello: function (otherName) {
+    console.log("hi " + otherName);
+  },
+};
+
+console.log(player.name);
+player.hello("bu");  // => hi bu
+```

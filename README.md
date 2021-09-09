@@ -141,7 +141,7 @@ function안에서 return과 추가작업을 입력하면 return만 작업하고 
 const age = parseInt(prompt("몇 살이야?"));
 // parseInt() = String을 num으로 전환시키는 함수(String(숫자만 처리가능))
 console.log(isNaN(age));
-// isNaN() = 이 함수를 사용하면 boolean으로 알려줌
+// isNaN() = 이 함수를 사용하면 boolean으로 알려줌 true와 false를 반환
 // NaN(Not a Number)이 아니면 false 맞으면  true
 
 if (isNaN(age)) { // true

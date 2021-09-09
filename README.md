@@ -133,3 +133,38 @@ const squareResult = calculator.square(divideResult, minusResult);
 function안에서 return과 추가작업을 입력하면 return만 작업하고 추가 수행은 이뤄지지 않는다.
 만약 return 앞에 기타작업이 있다면 이 작업은 수행된다.
 즉, "return"까지만 수행된다.
+
+###조건문(if-else)
+
+```javascript
+// prompt() = alert처럼 창을 띄운 후 입력 받을 수 있게 하는 함수
+const age = parseInt(prompt("몇 살이야?"));
+// parseInt() = String을 num으로 전환시키는 함수(String(숫자만 처리가능))
+console.log(isNaN(age));
+// isNaN() = 이 함수를 사용하면 boolean으로 알려줌
+// NaN(Not a Number)이 아니면 false 맞으면  true
+
+if (isNaN(age)) { // true
+  console.log("숫자만 써줘");
+} else {  // false
+  console.log("고마워");
+}
+```
+
+나이를 입력받는 프로그램
+```javascript
+const age = parseInt(prompt("나이를 입력하세요"));
+
+if (isNaN(age) || age < 0) { //  OR 연산자 = ||
+  console.log("양의 숫자를 입력하세요");
+} else if (age < 18) {
+  console.log("너무 어려");
+} else if (age >= 19 && age <= 50) { // AND 연산자 = &&
+  console.log("술을 마실 수 있는 나이");
+} else {
+  console.log("몸 관리에 신경써야하는 나이 입니다.");
+}
+```
+**AND 연산자는 둘 다 true이면 true가 되고,
+OR 연산자는 둘 중 하나만 true이면 true가 된다.
+OR 연산자가 false가 되려면은 둘 다 false가 되어야한다. **

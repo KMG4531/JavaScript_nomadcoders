@@ -100,3 +100,36 @@ const player = {
 console.log(player.name);
 player.hello("bu");  // => hi bu
 ```
+
+### return
+함수(function) 안에서 return 이용법
+위에서는 함수인에 console.log()을 사용하여 출력을 하였다.
+이번에는 console.log()를 쓰지 않고 return을 사용하여 출력할 것이다.
+```javascript
+const calculator = {
+  add: function (a, b) {
+    return a + b;
+  },
+  minus: function (a, b) {
+    return a - b;
+  },
+  divide: function (a, b) {
+    return a / b;
+  },
+  multiply: function (a, b) {
+    return a * b;
+  },
+  square: function (a, b) {
+    return a ** b;
+  },
+};
+
+const plusResult = calculator.add(2, 3);
+const minusResult = calculator.minus(plusResult, 10);
+const multiplyResult = calculator.multiply(10, minusResult);
+const divideResult = calculator.divide(multiplyResult, plusResult);
+const squareResult = calculator.square(divideResult, minusResult);
+```
+function안에서 return과 추가작업을 입력하면 return만 작업하고 추가 수행은 이뤄지지 않는다.
+만약 return 앞에 기타작업이 있다면 이 작업은 수행된다.
+즉, "return"까지만 수행된다.

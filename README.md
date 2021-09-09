@@ -165,11 +165,11 @@ if (isNaN(age) || age < 0) { //  OR 연산자 = ||
   console.log("몸 관리에 신경써야하는 나이 입니다.");
 }
 ```
-**
+
 AND 연산자는 둘 다 true이면 true가 되고,
 OR 연산자는 둘 중 하나만 true이면 true가 된다.
 OR 연산자가 false가 되려면은 둘 다 false가 되어야한다. 
-**
+
 
 age === 100 // age가 100랑 같다면
 age !== 100 // age가 100이 아니라면

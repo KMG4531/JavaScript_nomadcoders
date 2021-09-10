@@ -152,6 +152,7 @@ if (isNaN(age)) { // true
 ```
 
 나이를 입력받는 프로그램
+
 ```javascript
 const age = parseInt(prompt("나이를 입력하세요"));
 

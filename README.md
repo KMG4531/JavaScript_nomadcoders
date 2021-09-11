@@ -180,3 +180,23 @@ else if (age === 100) { // 값이 같다는 것을 확인 할 때 ===
   console.log("와우");
 }
 ```
+
+### document
+document는 모든 것의 시작점이라고 생각하면 됨
+document는 JavaScript에서 HTML에 접근할 수 있는 방법
+이번 시간에 짧게 배운 것
+```javascript
+document.title  // HTML에 있는 title의 값을 불러옴
+document.title = "HI" // HTML에 있는 title 수정
+```
+document 함수에 있는 getElementByID()를 사용하면 HTML에서 id를 통해 Element를 찾아줌
+console.log() 함수보다 더 자세하게 보여주는 함수 console.dir()이 있다.
+```javascript
+const title = document.getElementById("title");
+
+console.log(title);
+console.dir(title);
+
+title.innerText = "Got you";  // HTML에 있는 title이란 id를 가진 텍스트를 변경
+// element를 더 자세하게 보여주는 console.dir()
+```

@@ -212,3 +212,30 @@ class가 아니라 id라면 #id이름 을 사용하면 첫 번째 Element만 가
 document.querySelector(“#hello”);
 document.getElementById(“hello”);
 위에 id를 찾는 코드는 같지만 getElementById은 하위요소를 가져오지 못한다.
+
+### Events
+```javascript
+const title = document.querySelector("div.hello:first-child h1");
+// HTML에 있는 id의 하위 요소를 title에 저장시킴
+function handTitleClick() {
+  console.log("title was clicked!");
+  title.style.color = "blue";
+}
+// 함수를 만듬
+title.addEventListener("click", handTitleClick);
+// title를 클릭하면 이벤트를 발생시켜 handTitleClick이라는 함수를 호출시킴
+```
+JavaScript가 document로 html을 불러올 수 있고 수정 추가도 가능하다.
+
+1.불러오는 함수
+querySelector / querySelectorAll 이 유용하다.
+2. 사용자의 Event를 listen해서 반응
+addEventListener("event", function);
+**이때 function에 실행 하는 () 기호는 쓰지 않는다. 우리가 원하는 것은 이벤트 발생 시 함수가 실행되는 것이기 때문에 ()를 임의로 사용하면 이벤트 발생 전에 실행된다.**
+3. 바꿀 수 있는 property 중 style도 있다.
+title.style.color = "blue";
+function handTitleClick() {
+  console.log("title was clicked!");
+  title.style.color = "blue";
+}
+title.addEventListener("click", handTitleClick); 처럼 쓸 수 있다.

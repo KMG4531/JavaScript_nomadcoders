@@ -200,3 +200,15 @@ console.dir(title);
 title.innerText = "Got you";  // HTML에 있는 title이란 id를 가진 텍스트를 변경
 // element를 더 자세하게 보여주는 console.dir()
 ```
+
+### querySelector
+querySelector은 Element를 css 방식으로 검색할 수 있다.
+querySelector은 하나의 Element만 가져올 수 있고
+querySelectorAll은 같은 class의 tag가 있거나 같은 아이디가 있으면 배열로 전부 가져올 수 있다.
+
+예를 들어 const title = document.querySelector(".hello h1"); = hello란 클래스 안에 h1 Tag를 가져오고
+class가 아니라 id라면 #id이름 을 사용하면 첫 번째 Element만 가져온다.
+
+document.querySelector(“#hello”);
+document.getElementById(“hello”);
+위에 id를 찾는 코드는 같지만 getElementById은 하위요소를 가져오지 못한다.

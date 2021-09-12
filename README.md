@@ -239,3 +239,71 @@ function handTitleClick() {
   title.style.color = "blue";
 }
 title.addEventListener("click", handTitleClick); 처럼 쓸 수 있다.
+
+### 이벤트 리스너 팁
+console.dir(이름); 을 사용하여 콘솔에서 이벤트 리스너를 찾을 수 있다.
+이벤트 리스너는 property 앞에 on이 붙어 있다.
+자세한 설명은 MDN 사이트를 참조하자.
+콘솔에서 on이 붙어있는 이벤트 리스너를 사용할 때는 on을 빼고 사용해야한다.
+
+### Event part Two
+```javascript
+const title = document.querySelector("div.hello:first-child h1");
+// HTML에 있는 id의 하위 요소를 title에 저장시킴
+function handTitleClick() {
+  console.log("title was clicked!");
+  title.style.color = "blue";
+}
+function handMouseEnter() {
+  title.innerText = "Mouse is here!";
+}
+function handMouseLeave() {
+  title.innerText = "Mouse is gone!";
+}
+console.dir(title);
+// 이벤트 리스너 확인 가능(앞에 on이라고 붙어져 있는 것)
+// 사용할 때는 on 빼고 사용
+
+// 함수를 만듬
+title.addEventListener("click", handTitleClick);
+// title를 클릭하면 이벤트를 발생시켜 handTitleClick이라는 함수를 호출시킴
+title.addEventListener("mouseenter", handMouseEnter);
+// mouseenter은 마우스를 올렸을 때 발생
+title.addEventListener("mouseleave", handMouseLeave);
+// mouseleave은 마우스를 올렸다 내렸을 때 발생
+```
+
+### More Events
+document의 body,head,title 이런것들은 중요하기 때문에
+document.body.style~의 명령이 허용되지만, div같은것들은 호출이 안됨
+나머지 element들은 querySelector나 getElementById로 불러와야됨
+
+window는 보여지는 창(인터넷 화면)을 뜻함.
+
+추가 된 코드만 올림
+```javascript
+function handWindowResize() {
+  document.body.style.backgroundColor = "tomato";
+}
+function handWindowCopy() {
+  alert("copier");
+}
+function handWindowOffline() {
+  alert("SOS no WIFI");
+}
+function handWindowOnline() {
+  alert("ALL GOOOD");
+}
+
+window.addEventListener("resize", handWindowResize);
+// resize 화면 사이즈가 변할 때 발생
+
+window.addEventListener("copy", handWindowCopy);
+// ctrl + c 복사 했을 때 발생하는 이벤트
+
+window.addEventListener("offline", handWindowOffline);
+// WIFI를 껏을 때 발생하는 이벤트
+
+window.addEventListener("online", handWindowOnline);
+// WIFI가 켜졌을 때 발생하는 이벤트
+```

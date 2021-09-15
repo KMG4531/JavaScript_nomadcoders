@@ -134,7 +134,7 @@ function안에서 return과 추가작업을 입력하면 return만 작업하고 
 만약 return 앞에 기타작업이 있다면 이 작업은 수행된다.
 즉, "return"까지만 수행된다.
 
-###조건문(if-else)
+### 조건문(if-else)
 
 ```javascript
 // prompt() = alert처럼 창을 띄운 후 입력 받을 수 있게 하는 함수

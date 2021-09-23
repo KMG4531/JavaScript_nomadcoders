@@ -307,3 +307,39 @@ window.addEventListener("offline", handWindowOffline);
 window.addEventListener("online", handWindowOnline);
 // WIFI가 켜졌을 때 발생하는 이벤트
 ```
+
+### CSS in Javascript
+h1태그를 클릭했을 때 색이 파랑색과 토마토색으로 변하게 하는 js
+```javascript
+const h1 = document.querySelector("div.hello h1");
+// 하위 클래스를 찾아줌
+
+// 이벤트 정의
+function handleTitleClick() {
+  const currentColor = h1.style.color;
+  let newColor;
+  if (currentColor === "blue") {
+    newColor = "tomato";
+  } else {
+    newColor = "blue";
+  }
+  h1.style.color = newColor;
+}
+
+// 이벤트 실행
+h1.addEventListener("click", handleTitleClick);
+```
+#### 설명문
+현재 상태의 색깔값을 currentColor라는 이름의 변수에 저장해주고, 클릭했을 때 바뀌게 될 새로운 색깔값을 newColor라는 이름의 변수에 저장해줄거고 
+이걸로 글자색(h1.style.color)을 바꿔줄거죠? 
+(const currentColor = h1.style.color; 라고 했다고 이제부터 현재상태의색깔은 h1.style.color다! 이게 아니다.)
+여기서 컴퓨터는 newColor가 무슨용도인지 모르고 그냥 이름으로써 알고 있는 것이기 때문에
+다시 코드로 돌아가보면 어쨋든 지금 currentColor에 h1.style.color로 현재데이터를 넣어줬으니 조건문을 통과하면서 비어있던(undefined상태) 변수newColor에는 tomato가 들어가게됩니다.
+근데 여기까지만으로는 컴퓨터가 이게 글자색을 바꾸라는 뜻인지를 모릅니다. 
+사람은 변수이름 지을 때 이미 의도를 갖고있었기 때문에 자연스럽게 알고있겠지만 컴퓨터는 newColor라는 변수에 tomato를 넣긴 했는데 뭐 어쩌라는건지 모르고있다는거죠. (newColor에 데이터만 들어가고 끝! 인 상태)
+그래서 반복문이 끝나는 바로 다음 줄에 h1.style.color = newColor;를 써줌으로써 글자색을 바꾸도록 해주어야합니다.
+
+js 순서
+1. element 찾기
+2. event를 실행할 것을 정의하고
+3. 그 event를 정의한다.

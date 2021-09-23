@@ -347,6 +347,15 @@ js 순서
 ### CSS in Javascript part Two
 JS에 CSS를 섞어서 쓰면 코드가 더러워 지고 오류를 줄일 수 있기 때문에 JS와 CSS를 나눠 코드를 깔끔하게 작성해야한다.
 className 은 원래 있는 클래스를 삭제시키고 할당받은 클래스로 대체함
+기본 HTML
+```html
+<body>
+    <div class="hello">
+      <h1 class="sexy-font">Click me!</h1>
+    </div>
+    <script src="app.js"></script>
+ </body>
+```
 CSS
 ```css
 body {
@@ -359,6 +368,9 @@ h1 {
 .clicked { /* 태그가 없는 클래스 */
   color: tomato;
 }
+.sexy-font {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 ```
 JavaScript
 ```javascript
@@ -367,6 +379,7 @@ const h1 = document.querySelector("div.hello h1");
 function handleTitleClick() {
   const clickedClass = "clicked";
   // String을 변수에 저장해서 최대한 오류를 줄인다
+  // String을 반복하는 순간, 그때가 const로 설정
   if (h1.className === clickedClass) {
     h1.className = "";
     // 

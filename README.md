@@ -343,3 +343,36 @@ js 순서
 1. element 찾기
 2. event를 실행할 것을 정의하고
 3. 그 event를 정의한다.
+
+### CSS in Javascript part Two
+JS에 CSS를 섞어서 쓰면 코드가 더러워 지고 오류를 줄일 수 있기 때문에 JS와 CSS를 나눠 코드를 깔끔하게 작성해야한다.
+CSS
+```css
+body {
+  background-color: beige;
+}
+h1 {
+  color: blue;
+  transition: color 0.5s ease-in-out;
+}
+.clicked { /* 태그가 없는 클래스 */
+  color: tomato;
+}
+```
+JavaScript
+```javascript
+const h1 = document.querySelector("div.hello h1");
+
+function handleTitleClick() {
+  const clickedClass = "clicked";
+  // String을 변수에 저장해서 최대한 오류를 줄인다
+  if (h1.className === clickedClass) {
+    h1.className = "";
+    // 
+  } else {
+    h1.className = clickedClass;
+  }
+}
+
+h1.addEventListener("click", handleTitleClick);
+```

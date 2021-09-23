@@ -346,6 +346,7 @@ js 순서
 
 ### CSS in Javascript part Two
 JS에 CSS를 섞어서 쓰면 코드가 더러워 지고 오류를 줄일 수 있기 때문에 JS와 CSS를 나눠 코드를 깔끔하게 작성해야한다.
+className 은 원래 있는 클래스를 삭제시키고 할당받은 클래스로 대체함
 CSS
 ```css
 body {

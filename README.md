@@ -390,3 +390,46 @@ function handleTitleClick() {
 
 h1.addEventListener("click", handleTitleClick);
 ```
+
+### CSS in Javascript part Three
+오늘 배운 순서
+1. className
+2. classList
+3. contains()
+4. remove()
+5. add()
+6. toggle()
+
+className
+className은 HTML에 정의 되어있는 class를 상관하지 않고 모든 걸 교체한다.
+
+classList
+classList는 우리가 class들의 목록으로 작업할 수 있게끔 허용해준다.(className처럼 삭제하지 않고 원래 있던 class에 같이 사용할 수 있게 해줌)
+
+contains()
+contains()는 우리가 명시한 HTML element의 class에 포함되어 있는지 말해준다.
+
+remove, add는 삭제, 추가라고 생각해도 된다.
+
+toggle()
+toggle()은 토큰이 존재하면 토큰 제거하고, 토큰이 존재하지 않으면 토큰이 추가된다.
+
+# toggle()은 그야말로 신이다
+코드로 보면 이해가 빠르다.
+
+1번 코드
+```javascript
+if (h1.classList.contains(clickedClass)) {
+    h1.classList.remove(clickedClass);
+  } else {
+    h1.classList.add(clickedClass);
+  }
+```
+
+2번 코드
+```javascript
+h1.classList.toggle("clicked");
+```
+
+1번 코드의 5줄 짜리 코드가 2번 코드 1줄로 끝난다.
+toggle()은 if의 내용과 add와 remove를 다 담고 있는 그는 신이다.
